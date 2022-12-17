@@ -1,4 +1,9 @@
-
+include:
+  - project: "my-project-with-yml/test5"
+    ref: master
+    file: "/yml/.gitlab-ci.yaml"
+    rules: ## Optional, to show the support to **rules**
+    - if: $variable == "condition "
 stages:
 - build-push
 - deploy
