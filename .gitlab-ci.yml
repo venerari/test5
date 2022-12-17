@@ -1,0 +1,31 @@
+
+stages:
+- build-push
+- deploy
+image: venerayan/jvm:latest
+variables:
+DOCKER_PASS: Neopat#45678
+#services:
+#- docker:19.03.12-dind
+build-push:
+stage: build-push
+before_script:
+  - echo "$SERVICE_ACCOUNT_KEY" > key.json
+  - docker login -u venerayan -p $DOCKER_PASS
+script:
+  - ./gradlew build 
+  - docker build --tag veneraya/jvm:latest .
+  - docker push venerayan/jvm:latest
+tags:
+  - test-runner
+deploy:
+stage: deploy
+image: venerayan/jvm:latest
+script:
+# Authenticate with GKE
+  - echo "$SERVICE_ACCOUNT_KEY" > key.json
+  - gcloud auth activate-service-account --key-file=key.json
+  - kubectl apply -f ./kube/*.yaml
+tags:
+  - test-runner
+view raw.gitlab-ci1.yml hosted with ❤ by GitHub
