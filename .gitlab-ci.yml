@@ -1,10 +1,10 @@
 include:
-#   remote: https://gitlab.com/group11254/test5/-/raw/main/.gitlab-ci.yml
-   - project: "group11254/test5"
-     ref: main
-     file: "/yml/.gitlab-ci.yaml"
-     rules: ## Optional, to show the support to **rules**
-     - if: $variable == "condition "
+   remote: https://gitlab.com/group11254/test5/-/raw/main/.gitlab-ci.yml
+  #  - project: "group11254/test5"
+  #    ref: main
+  #    file: "/yml/.gitlab-ci.yaml"
+  #    rules: ## Optional, to show the support to **rules**
+  #    - if: $variable == "condition "
 stages:
 - build-push
 - deploy
