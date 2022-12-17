@@ -34,4 +34,4 @@ script:
   - kubectl apply -f ./kube/*.yaml
 tags:
   - test-runner
-view raw.gitlab-ci1.yml hosted with ❤ by GitHub
+#view raw.gitlab-ci1.yml hosted with ❤ by GitHub
