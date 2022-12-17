@@ -10,7 +10,7 @@ stages:
 - deploy
 image: venerayan/jvm:latest
 variables:
-DOCKER_PASS: Neopat#45678
+DOCKER_PASS: $DOCKER_PASS
 #services:
 #- docker:19.03.12-dind
 build-push:
