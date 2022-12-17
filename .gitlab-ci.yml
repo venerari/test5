@@ -1,4 +1,4 @@
-include:
+# include:
   #  remote: https://gitlab.com/group11254/test5/-/raw/main/.gitlab-ci.yml
   #  - project: "group11254/test5"
   #    ref: main
